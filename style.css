@@ -1,0 +1,478 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: 'Base';
+  src: url('fonts/Retro Team.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --base-color: #ffe100;
+}
+
+body {
+  font: 400 1rem 'Consolas', sans-serif;
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  color: var(--base-color);
+  font-family: 'Base', Times, sans-serif;
+  font-size: 2em;
+}
+
+h2 {
+}
+
+/*Header - Menu Inicial e Cabeçalho*/
+
+#header {
+  border-bottom: 2px solid var(--base-color);
+  background-color: #000;
+  margin-bottom: 2rem;
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 1.2);
+}
+
+.title {
+  color: #000;
+  font-family: 'Base', Times, sans-serif;
+  font-size: 2em;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+  border-bottom: 2px solid var(--base-color);
+}
+
+.section {
+  padding: 5rem 0;
+}
+.section .title {
+  margin-bottom: 1rem;
+}
+
+.button {
+  background-color: var(--base-color);
+  color: #000;
+  height: 3.5rem;
+  padding: 0 2rem;
+  border-radius: 00.25rem;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font: 500 1rem 'DM Sans', sans-serif;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: var(--base-color);
+}
+
+/*=================Navegação===================*/
+
+nav {
+  height: 4.5rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  color: var(--base-color);
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--base-color);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+  background: #f9f9f9;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/*Toggle menu*/
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 1.5rem;
+  transition: 0.2s;
+  top: -1.5rem;
+}
+
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/*================= FIM - Navegação===================*/
+
+.logo {
+  text-decoration: none;
+}
+
+/*FIM - Header - Menu Inicial e Cabeçalho*/
+main {
+  margin-top: 4.5rem;
+}
+
+/*Section Principal - HOME*/
+
+#home {
+  overflow: hidden;
+  background: #f9f9f9;
+}
+
+#home .container {
+  margin: 0;
+}
+
+#home .image {
+  position: relative;
+}
+
+/*before criar um elemento fantasma*/
+#home .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color);
+  position: absolute;
+  top: -16.8%;
+  left: 16.7%;
+  z-index: 0;
+}
+
+#home .image img {
+  position: relative;
+  right: 2.93rem;
+}
+
+#home .image img,
+#home .image::before {
+  border-radius: 0.25rem;
+}
+
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .text h2 {
+  font-family: 'Base', Times, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+/*=============Sobre==================*/
+
+#about {
+  background: white;
+  padding: 0;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  display: flex;
+  position: relative;
+  height: 18.75rem;
+  background-color: #000;
+}
+
+#about .image img {
+  object-fit: cover;
+  width: 100%;
+  object-position: 0rem -25rem;
+}
+
+#about .grid {
+  gap: 0;
+}
+
+#about h2.title {
+  position: absolute;
+  width: 100%;
+  padding-top: 16rem;
+  color: var(--base-color);
+}
+
+/*before criar um elemento fantasma*/
+#about .text {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: justify;
+}
+
+#about .text p {
+  margin-bottom: 1rem;
+}
+
+/*=============Planos==================*/
+
+#planos {
+  background: white;
+  padding: 0;
+}
+
+#planos .container {
+  margin: 0;
+}
+
+#planos .image {
+  display: flex;
+  position: relative;
+  height: 7.75rem;
+  background-color: #000;
+}
+
+#planos .image img {
+  object-fit: cover;
+  width: 100%;
+  object-position: 0rem 0rem;
+}
+
+#planos .grid {
+  gap: 0;
+}
+
+#planos h2.title {
+  color: var(--base-color);
+  position: absolute;
+  width: 100%;
+  padding-top: 16rem;
+  color: var(--base-color);
+  padding-top: 3rem;
+}
+
+/*=============Services==================*/
+
+.card {
+  padding: 2.625rem;
+  margin: 2.5rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  color: #000;
+}
+
+.card .title,
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  font-family: Base;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+/*=============Horarios==================*/
+#horario {
+  background: #000;
+  padding: 0;
+  padding-top: 3rem;
+}
+
+#horarios .container {
+  margin: 0;
+}
+
+#horario .title {
+  color: var(--base-color);
+}
+
+.colum-1 {
+  grid-auto-flow: column;
+}
+
+#horario .time-sem {
+  text-align: center;
+  color: #000;
+}
+
+#horario .sem {
+  padding-top: 0.5rem;
+  background-color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+#horario .hrs {
+  background-color: #fff;
+}
+
+#horario .gap {
+  gap: 0rem;
+}
+
+/*Contatos*/
+
+#contato .grid {
+  gap: 4rem;
+}
+#contato h2 {
+  text-align: left;
+}
+
+#contato .text p {
+  margin-bottom: 2rem;
+}
+
+#contato .button i,
+#contato ul li i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
+
+#contato ul.grid {
+  gap: 2rem;
+}
+
+#contato ul li {
+  display: flex;
+  align-items: center;
+}
+
+#contato ul li i {
+  color: var(--base-color);
+}
+
+#local {
+  background: white;
+  padding: 0;
+}
+
+#local .container {
+  margin: 0;
+}
+
+footer {
+  background-color: #000;
+  color: #f9f9f9;
+  text-align: center;
+}
+
+footer.section {
+  padding: 4rem 0;
+}
+
+footer .brand p {
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+
+footer .social {
+  grid-auto-flow: column;
+}
+footer .social a {
+  transition: 0.3s;
+  display: inline-block;
+  color: var(--base-color);
+}
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+
+.robertson {
+  background-color: white;
+  color: #000;
+  padding: 1rem;
+}

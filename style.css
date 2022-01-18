@@ -40,9 +40,6 @@ h1 {
   font-size: 2em;
 }
 
-h2 {
-}
-
 /*Header - Menu Inicial e Cabeçalho*/
 
 #header {
@@ -89,20 +86,23 @@ h2 {
 }
 
 .button {
+  display: inline-flex;
+  align-items: center;
   background-color: var(--base-color);
   color: #000;
   height: 3.5rem;
   padding: 0 2rem;
   border-radius: 00.25rem;
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  font: 500 1rem 'DM Sans', sans-serif;
   transition: background 0.3s;
 }
 
+.button i {
+  font-size: 1.5rem;
+  margin-right: 0.625rem;
+}
 .button:hover {
-  background: var(--base-color);
+  background: #000;
+  color: var(--base-color);
 }
 
 /*=================Navegação===================*/
@@ -223,7 +223,7 @@ main {
   background: var(--base-color);
   position: absolute;
   top: -16.8%;
-  left: 16.7%;
+  left: 5.7%;
   z-index: 0;
 }
 
@@ -240,14 +240,18 @@ main {
 #home .text {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
-  text-align: center;
 }
 
 #home .text h2 {
   font-family: 'Base', Times, sans-serif;
+  text-align: left;
   font-size: 1.5rem;
   margin-bottom: 2rem;
   max-width: 100%;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
 }
 
 /*=============Sobre==================*/
@@ -261,40 +265,19 @@ main {
   margin: 0;
 }
 
-#about .image {
-  display: flex;
-  position: relative;
-  height: 18.75rem;
-  background-color: #000;
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
 }
 
-#about .image img {
-  object-fit: cover;
-  width: 100%;
-  object-position: 0rem -25rem;
-}
-
-#about .grid {
-  gap: 0;
-}
-
-#about h2.title {
-  position: absolute;
-  width: 100%;
-  padding-top: 16rem;
-  color: var(--base-color);
-}
-
-/*before criar um elemento fantasma*/
 #about .text {
-  margin-top: 1.5rem;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   text-align: justify;
 }
 
 #about .text p {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 /*=============Planos==================*/
@@ -343,6 +326,7 @@ main {
   border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
+  background: #fff;
 }
 
 .card i {
@@ -365,7 +349,8 @@ h2 {
 #horario {
   background: #000;
   padding: 0;
-  padding-top: 3rem;
+  padding: 3rem 0;
+  font-size: 1rem;
 }
 
 #horarios .container {
@@ -374,15 +359,20 @@ h2 {
 
 #horario .title {
   color: var(--base-color);
+  font-size: 3rem;
 }
 
-.colum-1 {
-  grid-auto-flow: column;
+#horario .tabela-horarios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #horario .time-sem {
   text-align: center;
+  font-size: 2rem;
   color: #000;
+  width: 5rem;
 }
 
 #horario .sem {
@@ -412,6 +402,14 @@ h2 {
   margin-bottom: 2rem;
 }
 
+#contato .image img {
+  display: none;
+}
+
+#contato .links {
+  margin-top: 3rem;
+}
+
 #contato .button i,
 #contato ul li i {
   font-size: 1.5rem;
@@ -438,6 +436,10 @@ h2 {
 
 #local .container {
   margin: 0;
+}
+
+#local img {
+  display: none;
 }
 
 footer {
@@ -475,4 +477,204 @@ footer .social a:hover {
   background-color: white;
   color: #000;
   padding: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testimonials header {
+    max-width: 32rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .button {
+    align-items: center;
+    height: 3.125rem;
+  }
+
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+    color: #f9f9f9;
+    font: 500 1rem 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
+  main {
+    margin-top: var(--header-height);
+  }
+
+  /*Home*/
+
+  #home .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+    right: -2.93rem;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /*Abaut*/
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+  #about {
+    padding: 5rem 0;
+  }
+
+  #about .image img {
+    width: 20rem;
+  }
+
+  #about .image::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: var(--base-color);
+    position: absolute;
+    top: -8.8%;
+    left: -16.7%;
+    z-index: -1;
+  }
+
+  #planos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  #planos .image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+  }
+
+  .cards {
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    gap: 1rem;
+  }
+
+  #horario .time-sem {
+    font-size: 3rem;
+    width: 10rem;
+  }
+
+  #contato.section {
+    padding: 0rem;
+  }
+
+  #contato .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  #contato .image {
+    position: relative;
+    order: 1;
+  }
+
+  #contato .image img {
+    max-width: 25rem;
+    display: block;
+  }
+
+  #contato .text {
+    order: 0;
+    max-width: 30rem;
+    text-align: left;
+    margin: auto;
+  }
+
+  #contato .links {
+    margin-top: 3rem;
+  }
+
+  #local {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  #local img {
+    display: block;
+    position: absolute;
+    height: 100%;
+    left: 0%;
+    z-index: -10;
+  }
+
+  #local .maps {
+    margin: 5rem auto;
+  }
+
+  #local .maps iframe {
+    height: 25rem;
+    width: 1120px;
+    border-radius: 2rem;
+  }
+  footer .section {
+    padding: 3.75rem 0;
+  }
+
+  footer .logo {
+    font-size: 1.2rem;
+  }
+
+  footer .brid {
+    text-align: left;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

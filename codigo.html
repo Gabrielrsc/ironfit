@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Separar código de barras</title>
+  <title>Separar números</title>
 </head>
 <body>
-  <h1>Separar código de barras</h1>
+  <h1>Separar números</h1>
 
-  <input type="text" id="codigo-barras" placeholder="Insira os códigos de barras">
-  <button type="button" id="enviar">Enviar</button>
+  <p>Digite os números aqui:</p>
 
-  <p id="resultado"></p>
+  <textarea id="textoEntrada" rows="10" cols="50"></textarea>
+
+  <button id="botaoEnviar">Enviar</button>
+
+  <p>Resultado:</p>
+
+  <textarea id="textoSaida" rows="10" cols="50"></textarea>
+
+  <button id="botaoCopiar">Copiar</button>
 
   <script src="script.js"></script>
 </body>
